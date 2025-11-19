@@ -1,0 +1,22 @@
+---
+import Layout from "../layouts/Layout.astro";
+import FiftyFifty from "../components/templates/FiftyFifty/index.astro";
+import Hero from "../components/organisms/Hero/index.astro";
+---
+
+<Layout pageTitle="Home">
+    <FiftyFifty>
+        <div slot="left" class="bg-image"></div>
+        <Hero slot="right" />
+    </FiftyFifty>
+</Layout>
+
+<style>
+    .bg-image {
+        background-image: url("../assets/background-neon.jpg");
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        min-height: 100vh;
+    }
+</style>
