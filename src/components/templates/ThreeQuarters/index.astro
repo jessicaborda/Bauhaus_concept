@@ -1,0 +1,20 @@
+---
+import "./styles.scss";
+---
+
+<div class="three-quarters">
+    <div class="three-quarters__main">
+        <div class="three-quarters__main-top">
+            <slot name="main-top-left" />
+            <slot name="main-top-right" />
+        </div>
+        <slot name="main-middle" class="three-quarters__main-middle" />
+        <div class="three-quarters__main-bottom">
+            <slot name="main-bottom-left" />
+            <slot name="main-bottom-right" />
+        </div>
+    </div>
+    <slot name="side" />
+</div>
+
+<slot />

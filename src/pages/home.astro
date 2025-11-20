@@ -1,7 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import FiftyFifty from "../components/templates/FiftyFifty/index.astro";
+import ThreeQuarters from "../components/templates/ThreeQuarters/index.astro";
 import Hero from "../components/organisms/Hero/index.astro";
+import Description from "../components/organisms/Description/index.astro";
 ---
 
 <Layout pageTitle="Home">
@@ -9,6 +11,28 @@ import Hero from "../components/organisms/Hero/index.astro";
         <div slot="left" class="bg-image"></div>
         <Hero slot="right" />
     </FiftyFifty>
+    <ThreeQuarters>
+        <Description
+            slot="main-top-left"
+            title="La escuela que cambió la historia del diseño"
+            content="Fundada en 1919 por Walter Gropius en Alemania, la Bauhaus fue más que una escuela: fue un movimiento que unió arte, diseño, arquitectura y tecnología. Su filosofía era simple pero revolucionaria: la forma debe seguir a la función. Todo debía tener un propósito claro, una estructura racional y una estética accesible para todos."
+        />
+        <div slot="main-top-right" class="bg-image">
+            <!-- 1/3 del ancho superior -->
+        </div>
+        <h1 slot="main-middle" class="three-quarters__main-middle">
+            Un siglo después, su influencia sigue viva.
+        </h1>
+        <div slot="main-bottom-left" class="bg-image">
+            <!-- 2/3 del ancho inferior -->
+        </div>
+        <Description
+            slot="main-bottom-right"
+            title="Inspirada en 1919, creada para la era digital"
+            content="La Bauhaus sentó las bases del diseño moderno: el uso de la geometría, la tipografía limpia, los colores primarios y la producción modular. Hoy, su legado se refleja en cada interfaz minimalista, en cada sistema de diseño, y en cada experiencia digital centrada en el usuario."
+        />
+        <Hero slot="side" />
+    </ThreeQuarters>
 </Layout>
 
 <style>
@@ -17,6 +41,6 @@ import Hero from "../components/organisms/Hero/index.astro";
         background-size: cover;
         background-position: center;
         width: 100%;
-        min-height: 100vh;
+        min-height: 100%;
     }
 </style>
