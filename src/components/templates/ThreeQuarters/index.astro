@@ -8,13 +8,22 @@ import "./styles.scss";
             <slot name="main-top-left" />
             <slot name="main-top-right" />
         </div>
-        <slot name="main-middle" class="three-quarters__main-middle" />
+        <div class="three-quarters__main-middle">
+            <slot name="main-middle" />
+        </div>
         <div class="three-quarters__main-bottom">
             <slot name="main-bottom-left" />
             <slot name="main-bottom-right" />
         </div>
     </div>
-    <slot name="side" />
+    <div class="three-quarters__side">
+        <h1 class="three-quarters__side-title">
+            <slot name="side-title" />
+        </h1>
+        <div class="three-quarters__side-sections">
+            <slot name="side-sections" />
+        </div>
+    </div>
 </div>
 
 <slot />

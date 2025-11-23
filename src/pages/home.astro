@@ -4,6 +4,9 @@ import FiftyFifty from "../components/templates/FiftyFifty/index.astro";
 import ThreeQuarters from "../components/templates/ThreeQuarters/index.astro";
 import Hero from "../components/organisms/Hero/index.astro";
 import Description from "../components/organisms/Description/index.astro";
+import ColorStripe from "../components/atoms/ColorStripe/index.astro";
+import FourQuarters from "../components/templates/FourQuarters/index.astro";
+import backgroundNeon from "../assets/background-neon.jpg";
 ---
 
 <Layout pageTitle="Home">
@@ -20,9 +23,12 @@ import Description from "../components/organisms/Description/index.astro";
         <div slot="main-top-right" class="bg-image">
             <!-- 1/3 del ancho superior -->
         </div>
-        <h1 slot="main-middle" class="three-quarters__main-middle">
-            Un siglo después, su influencia sigue viva.
-        </h1>
+        <ColorStripe
+            slot="main-middle"
+            backgroundColor="#F9B700"
+            text="Un siglo después, su influencia sigue viva."
+            color="black"
+        />
         <div slot="main-bottom-left" class="bg-image">
             <!-- 2/3 del ancho inferior -->
         </div>
@@ -31,8 +37,42 @@ import Description from "../components/organisms/Description/index.astro";
             title="Inspirada en 1919, creada para la era digital"
             content="La Bauhaus sentó las bases del diseño moderno: el uso de la geometría, la tipografía limpia, los colores primarios y la producción modular. Hoy, su legado se refleja en cada interfaz minimalista, en cada sistema de diseño, y en cada experiencia digital centrada en el usuario."
         />
-        <Hero slot="side" />
+        <span slot="side-title">Principios Bauhaus</span>
+        <div slot="side-sections">
+            <section>
+                <h3>Forma y Función</h3>
+                <p>El diseño debe servir un propósito claro y práctico.</p>
+            </section>
+            <section>
+                <h3>Simplicidad</h3>
+                <p>Eliminar lo innecesario para destacar lo esencial.</p>
+            </section>
+            <section>
+                <h3>Geometría</h3>
+                <p>
+                    Uso de formas básicas como círculos, cuadrados y triángulos.
+                </p>
+            </section>
+        </div>
     </ThreeQuarters>
+    <ColorStripe
+        backgroundColor="#0063C2"
+        text="Bauhaus UI es una reinterpretación contemporánea de esa visión"
+        color="white"
+    />
+    <FourQuarters
+        backgroundImage={backgroundNeon.src}
+        section={{
+            title: "El arte de unir forma y función",
+            description:
+                "Esta librería UX/UI nace del deseo de crear componentes que no solo luzcan bien, sino que piensen como diseñadores. Cada elemento visual fue concebido bajo los principios de la Bauhaus: claridad, equilibrio, modularidad y propósito.",
+        }}
+    />
+    <ColorStripe
+        backgroundColor="#AE3624"
+        text="“El diseño no es solo cómo se ve, sino cómo funciona.” — Walter Gropius"
+        color="white"
+    />
 </Layout>
 
 <style>

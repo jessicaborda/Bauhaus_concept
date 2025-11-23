@@ -1,0 +1,35 @@
+---
+import "./styles.scss";
+
+interface Props {
+    backgroundImage?: string;
+    section: {
+        title: string;
+        description: string;
+    };
+}
+
+const {
+    backgroundImage = "/images/default-bg.jpg",
+    section = {
+        title: "Section 1",
+        description: "Description for section 1",
+    },
+} = Astro.props;
+---
+
+<div class="four-quarters">
+    <div
+        class="four-quarters__image-section"
+        style={`background-image: url(${backgroundImage})`}
+    >
+    </div>
+
+    <div class="four-quarters__content-section">
+        <h2 class="four-quarters__title">{section.title}</h2>
+        <p class="four-quarters__description">{section.description}</p>
+        <div class="four-quarters__cards">
+            <slot name="cards-1" />
+        </div>
+    </div>
+</div>

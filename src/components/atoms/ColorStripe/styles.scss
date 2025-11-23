@@ -1,0 +1,14 @@
+.color-stripe {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem;
+    border-bottom: 5px solid black;
+    border-top: 5px solid black;
+
+    &__text {
+        margin: 0;
+        text-align: center;
+    }
+}
