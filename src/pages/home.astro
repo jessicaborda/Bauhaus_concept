@@ -6,51 +6,72 @@ import Hero from "../components/organisms/Hero/index.astro";
 import Description from "../components/organisms/Description/index.astro";
 import ColorStripe from "../components/atoms/ColorStripe/index.astro";
 import FourQuarters from "../components/templates/FourQuarters/index.astro";
-import backgroundNeon from "../assets/background-neon.jpg";
+import hero_image from "../assets/hero_image.jpg";
+import image_01 from "../assets/image_01.jpg";
+import image_02 from "../assets/image_02.jpg";
+import image_03 from "../assets/image_03.jpg";
+import image_04 from "../assets/image_04.jpg";
+import image_05 from "../assets/image_05.jpg";
 ---
 
 <Layout pageTitle="Home">
-    <FiftyFifty>
-        <div slot="left" class="bg-image"></div>
-        <Hero slot="right" />
-    </FiftyFifty>
-    <ThreeQuarters>
+    <Hero backgroundImage={hero_image.src} />
+    <ThreeQuarters
+        backgroundImageTopRight={image_01.src}
+        backgroundImageBottomLeft={image_02.src}
+    >
         <Description
             slot="main-top-left"
             title="La escuela que cambió la historia del diseño"
             content="Fundada en 1919 por Walter Gropius en Alemania, la Bauhaus fue más que una escuela: fue un movimiento que unió arte, diseño, arquitectura y tecnología. Su filosofía era simple pero revolucionaria: la forma debe seguir a la función. Todo debía tener un propósito claro, una estructura racional y una estética accesible para todos."
         />
-        <div slot="main-top-right" class="bg-image">
-            <!-- 1/3 del ancho superior -->
-        </div>
         <ColorStripe
             slot="main-middle"
             backgroundColor="#F9B700"
             text="Un siglo después, su influencia sigue viva."
             color="black"
         />
-        <div slot="main-bottom-left" class="bg-image">
-            <!-- 2/3 del ancho inferior -->
-        </div>
         <Description
             slot="main-bottom-right"
             title="Inspirada en 1919, creada para la era digital"
             content="La Bauhaus sentó las bases del diseño moderno: el uso de la geometría, la tipografía limpia, los colores primarios y la producción modular. Hoy, su legado se refleja en cada interfaz minimalista, en cada sistema de diseño, y en cada experiencia digital centrada en el usuario."
         />
-        <span slot="side-title">Principios Bauhaus</span>
+        <span slot="side-title">Contexto histórico</span>
         <div slot="side-sections">
             <section>
-                <h3>Forma y Función</h3>
-                <p>El diseño debe servir un propósito claro y práctico.</p>
-            </section>
-            <section>
-                <h3>Simplicidad</h3>
-                <p>Eliminar lo innecesario para destacar lo esencial.</p>
-            </section>
-            <section>
-                <h3>Geometría</h3>
+                <h4>1919</h4>
                 <p>
-                    Uso de formas básicas como círculos, cuadrados y triángulos.
+                    Fundación en Weimar por Walter Gropius, tras la Primera
+                    Guerra Mundial.
+                </p>
+                <p>
+                    Alemania estaba en crisis, y la Bauhaus surgió como una
+                    propuesta de renovación cultural y social.
+                </p>
+            </section>
+            <section>
+                <h4>1925</h4>
+                <p>
+                    Se trasladó a Dessau, donde alcanzó su mayor esplendor bajo
+                    la dirección de Gropius y luego de Hannes Meyer.
+                </p>
+            </section>
+            <section>
+                <h4>1932</h4>
+                <p>Se mudó a Berlín, dirigida por Mies van der Rohe.</p>
+            </section>
+            <section>
+                <h4>1933</h4>
+                <p>
+                    Fue cerrada por el régimen nazi, que consideraba su enfoque
+                    “revolucionario” y “decadente”.
+                </p>
+            </section>
+            <section>
+                <h4>Hoy</h4>
+                <p>
+                    Aunque duró solo 14 años, su impacto fue extraordinario y
+                    duradero.
                 </p>
             </section>
         </div>
@@ -61,7 +82,7 @@ import backgroundNeon from "../assets/background-neon.jpg";
         color="white"
     />
     <FourQuarters
-        backgroundImage={backgroundNeon.src}
+        backgroundImage={image_03.src}
         section={{
             title: "El arte de unir forma y función",
             description:
@@ -73,6 +94,65 @@ import backgroundNeon from "../assets/background-neon.jpg";
         text="“El diseño no es solo cómo se ve, sino cómo funciona.” — Walter Gropius"
         color="white"
     />
+    <ThreeQuarters
+        backgroundImageTopRight={image_04.src}
+        backgroundImageBottomLeft={image_05.src}
+    >
+        <Description
+            slot="main-top-left"
+            title="Componentes que piensan como diseñadores"
+            content="Cada componente de esta librería fue diseñado con una intención clara: comunicar, organizar y guiar la interacción. Inspirados en la geometría Bauhaus, son piezas de un sistema funcional, adaptable y elegante."
+        />
+        <ColorStripe
+            slot="main-middle"
+            backgroundColor="#F9B700"
+            text="Un siglo después, su influencia sigue viva."
+            color="black"
+        />
+        <Description
+            slot="main-bottom-right"
+            title="Inspirada en 1919, creada para la era digital"
+            content="La Bauhaus sentó las bases del diseño moderno: el uso de la geometría, la tipografía limpia, los colores primarios y la producción modular. Hoy, su legado se refleja en cada interfaz minimalista, en cada sistema de diseño, y en cada experiencia digital centrada en el usuario."
+        />
+        <span slot="side-title">Del concepto al componente</span>
+        <div slot="side-sections">
+            <section>
+                <h4>Investigación</h4>
+                <p>
+                    Comprensión del legado Bauhaus y análisis de su impacto en
+                    el diseño contemporáneo.
+                </p>
+            </section>
+            <section>
+                <h4>Exploración visual</h4>
+                <p>
+                    Desarrollo de una identidad basada en geometría, color
+                    primario y tipografía racional.
+                </p>
+            </section>
+            <section>
+                <h4>Definición del sistema</h4>
+                <p>
+                    Creación de tokens visuales, grillas y principios de
+                    consistencia.
+                </p>
+            </section>
+            <section>
+                <h4>Construcción de componentes</h4>
+                <p>
+                    Desarrollo en React con enfoque en modularidad,
+                    escalabilidad y accesibilidad.
+                </p>
+            </section>
+            <section>
+                <h4>Iteración y refinamiento</h4>
+                <p>
+                    Pruebas visuales, microinteracciones y ajustes de
+                    usabilidad.
+                </p>
+            </section>
+        </div>
+    </ThreeQuarters>
 </Layout>
 
 <style>

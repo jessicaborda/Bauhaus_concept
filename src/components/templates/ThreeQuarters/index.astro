@@ -1,18 +1,39 @@
 ---
 import "./styles.scss";
+
+interface Props {
+    backgroundImageTopRight?: string;
+    backgroundImageBottomLeft?: string;
+}
+
+const { backgroundImageTopRight, backgroundImageBottomLeft } = Astro.props;
 ---
 
 <div class="three-quarters">
     <div class="three-quarters__main">
         <div class="three-quarters__main-top">
             <slot name="main-top-left" />
-            <slot name="main-top-right" />
+            <div
+                class="three-quarters__background-slot"
+                style={backgroundImageTopRight
+                    ? `background-image: url(${backgroundImageTopRight});`
+                    : ""}
+            >
+                <slot name="main-top-right" />
+            </div>
         </div>
         <div class="three-quarters__main-middle">
             <slot name="main-middle" />
         </div>
         <div class="three-quarters__main-bottom">
-            <slot name="main-bottom-left" />
+            <div
+                class="three-quarters__background-slot"
+                style={backgroundImageBottomLeft
+                    ? `background-image: url(${backgroundImageBottomLeft});`
+                    : ""}
+            >
+                <slot name="main-bottom-left" />
+            </div>
             <slot name="main-bottom-right" />
         </div>
     </div>

@@ -19,17 +19,16 @@ const {
 ---
 
 <div class="four-quarters">
-    <div
-        class="four-quarters__image-section"
-        style={`background-image: url(${backgroundImage})`}
-    >
-    </div>
-
     <div class="four-quarters__content-section">
         <h2 class="four-quarters__title">{section.title}</h2>
         <p class="four-quarters__description">{section.description}</p>
         <div class="four-quarters__cards">
             <slot name="cards-1" />
         </div>
+    </div>
+    <div
+        class="four-quarters__image-section"
+        style={`background-image: url(${backgroundImage})`}
+    >
     </div>
 </div>
