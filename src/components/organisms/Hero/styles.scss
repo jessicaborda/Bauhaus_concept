@@ -1,7 +1,7 @@
 .hero {
     display: flex;
     flex-direction: row;
-    height: 100vh;
+    height: fit-content;
     width: 100%;
     border-bottom: var(--border-md);
 
@@ -22,12 +22,6 @@
         gap: 40px;
     }
 
-    &__yellow-line {
-        width: 8px;
-        height: 100%;
-        background-color: var(--color-secondary);
-    }
-
     &__red-line {
         width: 70%;
         height: 8px;
@@ -45,12 +39,21 @@
         flex-direction: row;
         align-items: center;
         justify-content: flex-end;
-        height: 100%;
+        height: 400px;
+        width: 200px;
+        border-right: solid 8px var(--color-secondary);
+        padding: 0;
+        margin: 0;
     }
 
     &__title-text {
         transform: rotate(270deg);
         margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: fit-content;
+        width: fit-content;
     }
 
     &__content {
@@ -69,6 +72,7 @@
         justify-content: center;
         flex: 1;
         padding: 24px 0;
+        gap: 24px;
     }
 
     &__buttons {
