@@ -1,5 +1,6 @@
 ---
 import "./styles.scss";
+import { Button } from "@ars-design/bauhaus-ui";
 
 interface Props {
     backgroundImage?: string;
@@ -32,8 +33,8 @@ const { backgroundImage } = Astro.props;
                     servicio de la experiencia.
                 </p>
                 <div class="hero__buttons">
-                    <button>Explorar componentes</button>
-                    <button>Ver proceso de diseño</button>
+                    <Button client:load>Explorar componentes</Button>
+                    <Button client:load>Ver proceso de diseño</Button>
                 </div>
             </div>
             <div class="hero__blue-line"></div>

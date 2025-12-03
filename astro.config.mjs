@@ -1,15 +1,19 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 
+import react from '@astrojs/react';
+
 // https://astro.build/config
 export default defineConfig({
-    vite: {
-        css: {
-            preprocessorOptions: {
-                scss: {
-                    api: 'modern-compiler', // Recommended for modern Sass
-                },
-            },
-        },
-    },
+  vite: {
+      css: {
+          preprocessorOptions: {
+              scss: {
+                  api: 'modern-compiler', // Recommended for modern Sass
+              },
+          },
+      },
+  },
+
+  integrations: [react()],
 });
