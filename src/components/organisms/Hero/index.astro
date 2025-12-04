@@ -37,7 +37,14 @@ const { backgroundImage } = Astro.props;
                 </p>
                 <div class="hero__buttons">
                     <Button client:load>Explorar componentes</Button>
-                    <Button client:load>Ver proceso de diseño</Button>
+                    <Button
+                        client:load
+                        variant="outline"
+                        color="blue"
+                        size="medium"
+                    >
+                        Ver proceso de diseño
+                    </Button>
                 </div>
             </div>
             <div class="hero__blue-line"></div>
