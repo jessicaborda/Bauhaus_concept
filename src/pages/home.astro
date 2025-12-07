@@ -1,25 +1,28 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import FiftyFifty from "../components/templates/FiftyFifty/index.astro";
-import ThreeQuarters from "../components/templates/ThreeQuarters/index.astro";
-import Hero from "../components/organisms/Hero/index.astro";
-import Description from "../components/organisms/Description/index.astro";
-import ColorStripe from "../components/atoms/ColorStripe/index.astro";
-import FourQuarters from "../components/templates/FourQuarters/index.astro";
-import hero_image from "../assets/hero_image.jpg";
-import image_01 from "../assets/image_01.jpg";
-import image_02 from "../assets/image_02.jpg";
-import image_03 from "../assets/image_03.jpg";
-import image_04 from "../assets/image_04.jpg";
-import image_05 from "../assets/image_05.jpg";
+import Layout from "@layouts/Layout.astro";
+import FiftyFifty from "@components/templates/FiftyFifty/index.astro";
+import ThreeQuarters from "@components/templates/ThreeQuarters/index.astro";
+import Hero from "@components/organisms/Hero/index.astro";
+import Description from "@components/organisms/Description/index.astro";
+import ColorStripe from "@components/atoms/ColorStripe/index.astro";
+import FourQuarters from "@components/templates/FourQuarters/index.astro";
+import hero_image from "@assets/hero_image.jpg";
+import image_01 from "@assets/image_01.jpg";
+import image_02 from "@assets/image_02.jpg";
+import image_03 from "@assets/image_03.jpg";
+import image_04 from "@assets/image_04.jpg";
+import image_05 from "@assets/image_05.jpg";
 ---
 
 <Layout pageTitle="Home">
-    <Hero backgroundImage={hero_image.src} />
-    <ThreeQuarters
-        backgroundImageTopRight={image_01.src}
-        backgroundImageBottomLeft={image_02.src}
-    >
+    <div id="home">
+        <Hero backgroundImage={hero_image.src} />
+    </div>
+    <div id="history">
+        <ThreeQuarters
+            backgroundImageTopRight={image_01.src}
+            backgroundImageBottomLeft={image_02.src}
+        >
         <Description
             slot="main-top-left"
             title="La escuela que cambió la historia del diseño"
@@ -75,7 +78,8 @@ import image_05 from "../assets/image_05.jpg";
                 </p>
             </section>
         </div>
-    </ThreeQuarters>
+        </ThreeQuarters>
+    </div>
     <ColorStripe
         backgroundColor="#0063C2"
         text="Bauhaus UI es una reinterpretación contemporánea de esa visión"
@@ -91,13 +95,14 @@ import image_05 from "../assets/image_05.jpg";
     />
     <ColorStripe
         backgroundColor="#AE3624"
-        text="“El diseño no es solo cómo se ve, sino cómo funciona.” — Walter Gropius"
+        text='"El diseño no es solo cómo se ve, sino cómo funciona." — Walter Gropius'
         color="white"
     />
-    <ThreeQuarters
-        backgroundImageTopRight={image_04.src}
-        backgroundImageBottomLeft={image_05.src}
-    >
+    <div id="components">
+        <ThreeQuarters
+            backgroundImageTopRight={image_04.src}
+            backgroundImageBottomLeft={image_05.src}
+        >
         <Description
             slot="main-top-left"
             title="Componentes listos para construir, como bloques de un sistema"
@@ -152,10 +157,13 @@ import image_05 from "../assets/image_05.jpg";
                 </p>
             </section>
         </div>
-    </ThreeQuarters>
-    <ColorStripe
-        backgroundColor="var(--color-tertiary)"
-        text="Construyamos algo juntos"
-        color="white"
-    />
+        </ThreeQuarters>
+    </div>
+    <div id="contact">
+        <ColorStripe
+            backgroundColor="var(--color-tertiary)"
+            text="Construyamos algo juntos"
+            color="white"
+        />
+    </div>
 </Layout>
