@@ -1,5 +1,7 @@
 ---
 import "./styles.scss";
+import "@ars-design/bauhaus-ui/styles";
+import { CardHeader, RowCard, Button } from "@ars-design/bauhaus-ui";
 
 interface Props {
     backgroundImage?: string;
@@ -7,6 +9,10 @@ interface Props {
         title: string;
         description: string;
     };
+    cards?: Array<{
+        title: string;
+        description: string;
+    }>;
 }
 
 const {
@@ -15,6 +21,12 @@ const {
         title: "Section 1",
         description: "Description for section 1",
     },
+    cards = [
+        { title: "Card 1", description: "Description 1" },
+        { title: "Card 2", description: "Description 2" },
+        { title: "Card 3", description: "Description 3" },
+        { title: "Card 4", description: "Description 4" },
+    ],
 } = Astro.props;
 ---
 
@@ -23,7 +35,24 @@ const {
         <h2 class="four-quarters__title">{section.title}</h2>
         <p class="four-quarters__description">{section.description}</p>
         <div class="four-quarters__cards">
-            <slot name="cards-1" />
+            <div class="four-quarters__cards__top">
+                <CardHeader client:load header={cards[0]?.title}>
+                    <p>{cards[0]?.description}</p>
+                </CardHeader>
+                <RowCard client:load shadow>
+                    <h3>{cards[1]?.title}</h3>
+                    <p>{cards[1]?.description}</p>
+                </RowCard>
+            </div>
+            <div class="four-quarters__cards__bottom">
+                <RowCard client:load shadow>
+                    <h3>{cards[2]?.title}</h3>
+                    <p>{cards[2]?.description}</p>
+                </RowCard>
+                <CardHeader client:load header={cards[3]?.title}>
+                    <p>{cards[3]?.description}</p>
+                </CardHeader>
+            </div>
         </div>
     </div>
     <div

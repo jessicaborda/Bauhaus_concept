@@ -83,4 +83,15 @@
         gap: 24px;
     }
 
+    @media (max-width: 768px) {
+        flex-direction: column;
+        height: auto;
+        min-height: auto;
+
+        >* {
+            width: 100%;
+            height: auto;
+        }
+    }
+
 }

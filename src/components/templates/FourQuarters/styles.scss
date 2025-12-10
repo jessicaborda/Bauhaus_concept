@@ -43,18 +43,39 @@
         flex-direction: column;
         gap: 1rem;
         flex: 1;
-    }
 
-    // Responsive design
-    @media (max-width: 1024px) {
-        grid-template-columns: repeat(2, 1fr);
+        &__top {
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+            flex: 1;
 
-        &__image-section {
-            grid-column: 1 / -1;
+            // CardHeader (primer hijo) - 35% del contenedor
+            > :first-child {
+                flex: 0 0 35%;
+            }
+
+            // RowCard (segundo hijo) - 65% del contenedor
+            > :last-child {
+                flex: 0 0 65%;
+            }
         }
 
-        &__content-section {
-            grid-column: 1 / -1;
+        &__bottom {
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+            flex: 1;
+
+            // RowCard (primer hijo) - 65% del contenedor
+            > :first-child {
+                flex: 0 0 65%;
+            }
+
+            // CardHeader (segundo hijo) - 35% del contenedor
+            > :last-child {
+                flex: 0 0 35%;
+            }
         }
     }
 
@@ -62,11 +83,27 @@
         grid-template-columns: 1fr;
 
         &__image-section {
-            min-height: 300px;
+            min-width: 100%;
+            height: auto;
+
         }
 
         &__content-section {
             padding: 1.5rem;
         }
+
+        &__cards {
+            flex-direction: column;
+
+            &__top {
+                flex-direction: column;
+            }
+
+            &__bottom {
+                flex-direction: column;
+            }
+        }
     }
+
+
 }
