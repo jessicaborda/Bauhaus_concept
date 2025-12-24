@@ -1,0 +1,68 @@
+---
+import "./styles.scss";
+import { Button } from "@ars-design/bauhaus-ui";
+
+import type { ImageMetadata } from "astro";
+
+interface Props {
+	backgroundImage?: string | ImageMetadata;
+}
+
+const { backgroundImage } = Astro.props;
+
+const backgroundUrl = typeof backgroundImage === "string" ? backgroundImage : backgroundImage?.src;
+const aspectRatio =
+	typeof backgroundImage === "object"
+		? `${backgroundImage.width} / ${backgroundImage.height}`
+		: "";
+---
+
+<div class="hero">
+	<div
+		class="hero__left"
+		style={backgroundImage
+			? `background-image: url(${backgroundUrl}); ${aspectRatio ? `aspect-ratio: ${aspectRatio};` : ""}`
+			: ""}
+	>
+		<slot name="left" />
+	</div>
+	<div class="hero__right">
+		<div class="hero__title">
+			<h1 class="hero__title-text">Bauhaus UI</h1>
+		</div>
+		<div class="hero__red-line"></div>
+		<div class="hero__content">
+			<div class="hero__text">
+				<h3>
+					Una librería de componentes donde la arquitectura se encuentra con la interfaz
+				</h3>
+				<p>
+					Diseñada desde la mirada de una arquitecta, diseñadora UI y desarrolladora
+					frontend, una librería UX/UI inspirada en la escuela que transformó el diseño
+					moderno. Minimalismo, estructura y claridad al servicio de la experiencia.
+				</p>
+				<div class="hero__buttons">
+					<a
+						href="https://jessicaborda.github.io/Bauhaus_components"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<Button client:load variant="solid" color="blue">
+							Explorar componentes
+						</Button>
+					</a>
+					<a
+						href="https://www.figma.com/design/io9044XRoqlAUxopIsKMBQ/Bauhaus_components?node-id=0-1&t=DmAVzrwQfZbywNb5-1"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<Button client:load variant="outline" color="blue">
+							Ver proceso de diseño
+						</Button>
+					</a>
+				</div>
+			</div>
+			<div class="hero__blue-line"></div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,27 @@
+---
+import { Button } from "@ars-design/bauhaus-ui";
+import "./styles.scss";
+
+interface Props {
+	title: string;
+	description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<div class="simple-template-container">
+	<div class="simple-template__left">
+		<h2>{title}</h2>
+		<p>{description}</p>
+	</div>
+	<div class="simple-template__right">
+		<a
+			href="https://www.linkedin.com/in/jessicaborda/"
+			target="_blank"
+			rel="noopener noreferrer"
+		>
+			<Button client:load variant="solid" color="yellow"> Contáctame </Button>
+		</a>
+	</div>
+</div>

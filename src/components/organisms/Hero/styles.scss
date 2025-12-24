@@ -1,0 +1,128 @@
+.hero {
+    display: flex;
+    flex-direction: row;
+    height: fit-content;
+    width: 100%;
+    border-bottom: var(--border-md);
+    background-color: var(--color-bg);
+
+    &__left {
+        flex: 1;
+        background-color: #E9DECA;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    &__right {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-end;
+        gap: 40px;
+    }
+
+    &__red-line {
+        width: 70%;
+        height: 8px;
+        background-color: var(--color-tertiary);
+    }
+
+    &__blue-line {
+        width: 8px;
+        height: 100%;
+        background-color: var(--color-primary);
+    }
+
+    &__title {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+        height: 400px;
+        width: 100px;
+        border-right: solid 8px var(--color-secondary);
+        padding: 0 1rem;
+        margin: 0;
+    }
+
+    &__title-text {
+        writing-mode: vertical-rl;
+        transform: rotate(180deg);
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: fit-content;
+        width: fit-content;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        padding: 0 24px;
+        gap: 24px;
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        flex: 1;
+        padding: 24px 0;
+        gap: 1.5rem;
+
+        h3 {
+            margin: 0;
+        }
+    }
+
+    &__buttons {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 24px;
+    }
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        height: auto;
+        min-height: auto;
+
+        &__buttons {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        &__text {
+            gap: 0.5rem;
+        }
+
+        &__left {
+            display: none;
+        }
+
+        &__content {
+            align-items: stretch;
+            padding: 0 1.5rem;
+        }
+
+        &__blue-line {
+            height: auto;
+            min-height: 100px;
+        }
+
+        >* {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+}

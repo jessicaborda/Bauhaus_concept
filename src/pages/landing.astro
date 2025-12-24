@@ -1,0 +1,165 @@
+---
+import "@styles/global.scss";
+import "@ars-design/bauhaus-ui/styles";
+import "./_landing.scss";
+import { Button, Card } from "@ars-design/bauhaus-ui";
+const base = import.meta.env.BASE_URL;
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="icon" type="image/svg+xml" href={`${base}/Favicon_ars.svg`} />
+		<title>Bauhaus UI — Librería de Componentes</title>
+		<meta
+			name="description"
+			content="Una librería de componentes React minimalista inspirada en la escuela Bauhaus. Forma sigue función."
+		/>
+	</head>
+	<body>
+		<div class="landing">
+			<!-- Decorative geometric elements -->
+			<div class="landing__geometry">
+				<div class="landing__circle landing__circle--yellow"></div>
+				<div class="landing__square landing__square--red"></div>
+				<div class="landing__triangle"></div>
+			</div>
+
+			<!-- Main content -->
+			<main class="landing__main">
+				<header class="landing__header">
+					<div class="landing__logo-block">
+						<span class="landing__logo-bar landing__logo-bar--blue"></span>
+						<span class="landing__logo-bar landing__logo-bar--yellow"></span>
+						<span class="landing__logo-bar landing__logo-bar--red"></span>
+					</div>
+					<h1 class="landing__title">Bauhaus<br />UI</h1>
+				</header>
+
+				<p class="landing__tagline">Forma sigue función</p>
+
+				<section class="landing__description">
+					<p>
+						Una librería de componentes React minimalista inspirada en la escuela que revolucionó el
+						diseño moderno.
+					</p>
+					<p>
+						Geometría pura, colores primarios y tipografía limpia — los principios de 1919 aplicados
+						a interfaces del siglo XXI.
+					</p>
+				</section>
+
+				<section class="landing__showcase">
+					<h2 class="landing__section-title">¿Por qué Bauhaus?</h2>
+
+					<div class="landing__cards">
+						<Card client:load title="Funcionalidad primero">
+							<p>
+								Cada componente tiene un propósito claro. Sin decoración innecesaria, solo elementos
+								que sirven a la experiencia del usuario.
+							</p>
+						</Card>
+
+						<Card client:load title="Geometría esencial">
+							<p>
+								Formas básicas, estructura racional. Círculos, cuadrados y triángulos como
+								fundamento visual de cada interfaz.
+							</p>
+						</Card>
+
+						<Card client:load title="Modularidad total">
+							<p>
+								Combina, escala, reutiliza. Componentes diseñados para trabajar en armonía dentro de
+								cualquier sistema.
+							</p>
+						</Card>
+					</div>
+				</section>
+
+				<section class="landing__links">
+					<h2 class="landing__section-title">Explora la librería</h2>
+					<div class="landing__buttons">
+						<a
+							href="https://www.npmjs.com/package/@ars-design/bauhaus-ui"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							<Button client:load variant="outline" color="blue">
+								<span class="landing__btn-content">
+									<svg class="landing__btn-icon" viewBox="0 0 24 24" fill="currentColor">
+										<path
+											d="M0 7.334v8h6.666v1.332H12v-1.332h12v-8H0zm6.666 6.664H5.334v-4H3.999v4H1.335V8.667h5.331v5.331zm4 0v1.336H8.001V8.667h5.334v5.332h-2.669v-.001zm12.001 0h-1.33v-4h-1.336v4h-1.335v-4h-1.33v4h-2.671V8.667h8.002v5.331z"
+										></path>
+									</svg>
+									npm
+								</span>
+							</Button>
+						</a>
+
+						<a
+							href="https://github.com/jessicaborda/Bauhaus_components"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							<Button client:load variant="outline" color="blue">
+								<span class="landing__btn-content">
+									<svg class="landing__btn-icon" viewBox="0 0 24 24" fill="currentColor">
+										<path
+											d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"
+										></path>
+									</svg>
+									GitHub
+								</span>
+							</Button>
+						</a>
+
+						<a
+							href="https://jessicaborda.github.io/Bauhaus_components"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							<Button client:load variant="outline" color="blue">
+								<span class="landing__btn-content">
+									<svg class="landing__btn-icon" viewBox="0 0 24 24" fill="currentColor">
+										<path
+											d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2zm-2 5v10l8-5-8-5z"
+										></path>
+									</svg>
+									Storybook
+								</span>
+							</Button>
+						</a>
+					</div>
+				</section>
+
+				<section class="landing__cta">
+					<a href={base}>
+						<Button client:load variant="solid" color="blue" size="large">
+							Conoce más sobre el proyecto
+						</Button>
+					</a>
+				</section>
+
+				<footer class="landing__footer">
+					<p>Diseñado con la visión de una arquitecta, para el mundo digital.</p>
+					<code>npm i @ars-design/bauhaus-ui</code>
+				</footer>
+			</main>
+
+			<!-- Right side accent -->
+			<aside class="landing__accent">
+				<div class="landing__accent-block landing__accent-block--1"></div>
+				<div class="landing__accent-block landing__accent-block--2"></div>
+				<div class="landing__accent-block landing__accent-block--3"></div>
+			</aside>
+		</div>
+	</body>
+</html>

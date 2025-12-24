@@ -1,0 +1,172 @@
+---
+import "@ars-design/bauhaus-ui/styles";
+import { Button } from "@ars-design/bauhaus-ui";
+import Layout from "@layouts/Layout.astro";
+import FiftyFifty from "@components/templates/FiftyFifty/index.astro";
+import ThreeQuarters from "@components/templates/ThreeQuarters/index.astro";
+import Hero from "@components/organisms/Hero/index.astro";
+import Description from "@components/organisms/Description/index.astro";
+import ColorStripe from "@components/atoms/ColorStripe/index.astro";
+import FourQuarters from "@components/templates/FourQuarters/index.astro";
+import SimpleTemplate from "@components/templates/SimpleTemplate/index.astro";
+import hero_image from "@assets/hero_image.jpg";
+import image_01 from "@assets/image_01.jpg";
+import image_02 from "@assets/image_02.jpg";
+import image_03 from "@assets/image_03.jpg";
+import image_04 from "@assets/image_04.jpg";
+import image_05 from "@assets/image_05.jpg";
+---
+
+<Layout pageTitle="Home">
+	<div id="home">
+		<Hero backgroundImage={hero_image} />
+	</div>
+	<div id="history">
+		<ThreeQuarters backgroundImageTopRight={image_01} backgroundImageBottomLeft={image_02}>
+			<Description
+				slot="main-top-left"
+				title="La escuela que cambió la historia del diseño"
+				content="Fundada en 1919 por Walter Gropius en Alemania, la Bauhaus fue más que una escuela: fue un movimiento que unió arte, diseño, arquitectura y tecnología. Su filosofía era simple pero revolucionaria: la forma debe seguir a la función. Todo debía tener un propósito claro, una estructura racional y una estética accesible para todos."
+			/>
+			<ColorStripe
+				slot="main-middle"
+				backgroundColor="#F9B700"
+				text="Un siglo después, su influencia sigue viva."
+				color="black"
+			/>
+			<Description
+				slot="main-bottom-right"
+				title="Inspirada en 1919, creada para la era digital"
+				content="La Bauhaus sentó las bases del diseño moderno: el uso de la geometría, la tipografía limpia, los colores primarios y la producción modular. Hoy, su legado se refleja en cada interfaz minimalista, en cada sistema de diseño, y en cada experiencia digital centrada en el usuario."
+			/>
+			<span slot="side-title">Contexto histórico</span>
+			<div slot="side-sections">
+				<section>
+					<h4>1919</h4>
+					<p>Fundación en Weimar por Walter Gropius, tras la Primera Guerra Mundial.</p>
+					<p>
+						Alemania estaba en crisis, y la Bauhaus surgió como una propuesta de renovación cultural
+						y social.
+					</p>
+				</section>
+				<section>
+					<h4>1925</h4>
+					<p>
+						Se trasladó a Dessau, donde alcanzó su mayor esplendor bajo la dirección de Gropius y
+						luego de Hannes Meyer.
+					</p>
+				</section>
+				<section>
+					<h4>1932</h4>
+					<p>Se mudó a Berlín, dirigida por Mies van der Rohe.</p>
+				</section>
+				<section>
+					<h4>1933</h4>
+					<p>
+						Fue cerrada por el régimen nazi, que consideraba su enfoque “revolucionario” y
+						“decadente”.
+					</p>
+				</section>
+				<section>
+					<h4>Hoy</h4>
+					<p>Aunque duró solo 14 años, su impacto fue extraordinario y duradero.</p>
+				</section>
+			</div>
+		</ThreeQuarters>
+	</div>
+	<ColorStripe
+		backgroundColor="#0063C2"
+		text="Bauhaus UI es una reinterpretación contemporánea de esa visión"
+		color="white"
+	/>
+	<FourQuarters
+		backgroundImage={image_03}
+		section={{
+			title: "El arte de unir forma y función",
+			description:
+				"Como arquitecta, siempre he entendido el diseño como una combinación equilibrada entre estructura, intención y experiencia. La Bauhaus representó esa unión perfecta entre arte y técnica, y esta librería nace precisamente desde esa filosofía. Cada componente fue creado aplicando principios arquitectónicos —proporción, ritmo, modularidad— y reinterpretando los fundamentos visuales de la Bauhaus para el mundo digital.",
+		}}
+		cards={[
+			{
+				title: "Simplicidad visual",
+				description: "Composiciones limpias y funcionales que eliminan el ruido visual.",
+			},
+			{
+				title: "Modularidad",
+				description: "Componentes reutilizables que construyen sistemas coherentes y escalables.",
+			},
+			{
+				title: "Accesibilidad",
+				description: "Diseñados para ser claros, inclusivos y universales.",
+			},
+			{
+				title: "Equilibrio estético",
+				description: "La belleza surge de la estructura y la intención, no del ornamento.",
+			},
+		]}
+	/>
+	<ColorStripe
+		backgroundColor="#AE3624"
+		text='"El diseño no es solo cómo se ve, sino cómo funciona." — Walter Gropius'
+		color="white"
+	/>
+	<div id="components">
+		<ThreeQuarters backgroundImageTopRight={image_04} backgroundImageBottomLeft={image_05}>
+			<Description
+				slot="main-top-left"
+				title="Componentes listos para construir, como bloques de un sistema"
+				content="Estos componentes fueron creados para funcionar tanto individualmente como en conjunto. Pueden adaptarse a múltiples escenarios de diseño, proyectos reales y aplicaciones modernas, manteniendo siempre un estilo fuerte, racional y funcional."
+			>
+				<a
+					href="https://www.npmjs.com/package/@ars-design/bauhaus-ui"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					<Button client:load variant="solid" color="red"> Instalar componentes </Button>
+				</a>
+			</Description>
+			<ColorStripe
+				slot="main-middle"
+				backgroundColor="#F9B700"
+				text="Un movimiento que transformó la arquitectura… y ahora también la interfaz"
+				color="black"
+			/>
+			<Description
+				slot="main-bottom-right"
+				title="De la arquitectura al diseño digital"
+				content="Soy arquitecta, diseñadora UI y desarrolladora frontend. Este proyecto representa el puente entre mis dos mundos: la arquitectura que me enseñó a pensar en estructura, experiencia y forma; y el diseño digital, que me permitió traducir esos conceptos a interfaces accesibles y funcionales.Bauhaus UI es la primera de varias librerías que quiero crear, cada una inspirada en movimientos artísticos y arquitectónicos que han marcado mi formación y mi manera de ver el diseño."
+			/>
+			<span slot="side-title">Del concepto al componente</span>
+			<div slot="side-sections">
+				<section>
+					<h4>Investigación</h4>
+					<p>Comprensión del legado Bauhaus y análisis de su impacto en el diseño contemporáneo.</p>
+				</section>
+				<section>
+					<h4>Exploración visual</h4>
+					<p>
+						Desarrollo de una identidad basada en geometría, color primario y tipografía racional.
+					</p>
+				</section>
+				<section>
+					<h4>Definición del sistema</h4>
+					<p>Creación de tokens visuales, grillas y principios de consistencia.</p>
+				</section>
+				<section>
+					<h4>Construcción de componentes</h4>
+					<p>Desarrollo en React con enfoque en modularidad, escalabilidad y accesibilidad.</p>
+				</section>
+				<section>
+					<h4>Iteración y refinamiento</h4>
+					<p>Pruebas visuales, microinteracciones y ajustes de usabilidad.</p>
+				</section>
+			</div>
+		</ThreeQuarters>
+	</div>
+	<div id="contact">
+		<SimpleTemplate
+			title="Construyamos algo juntos"
+			description="Explora la librería, revisa el código o contáctame si te interesa colaborar en futuros sistemas inspirados en arquitectura y arte."
+		/>
+	</div>
+</Layout>

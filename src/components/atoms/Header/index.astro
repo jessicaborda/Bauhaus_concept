@@ -1,0 +1,90 @@
+---
+import "./styles.scss";
+import logo from "@assets/Logo_Ars_Design_Blanco.svg?url";
+---
+
+<header class="header">
+	<div class="header__container">
+		<div class="header__top">
+			<button class="header__hamburger" id="hamburgerBtn" aria-label="Menu">
+				<span class="header__hamburger-line"></span>
+				<span class="header__hamburger-line"></span>
+				<span class="header__hamburger-line"></span>
+			</button>
+		</div>
+		<div class="header__logo" id="headerLogo">
+			<img src={logo} alt="Logo Bauhaus" class="header__logo-image" />
+		</div>
+		<h4 class="header__title" id="headerTitle">BAUHAUS UI</h4>
+		<nav class="header__nav" id="headerNav">
+			<ul class="header__menu">
+				<li class="header__menu-item">
+					<a href="#home" class="header__menu-link">Inicio</a>
+				</li>
+				<li class="header__menu-item">
+					<a href="#history" class="header__menu-link">Contexto histórico</a>
+				</li>
+				<li class="header__menu-item">
+					<a href="#components" class="header__menu-link">Componentes</a>
+				</li>
+				<li class="header__menu-item">
+					<a href="#contact" class="header__menu-link">Contacto</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</header>
+
+<script>
+	// Handle scroll behavior for logo and title visibility
+	const logo = document.getElementById("headerLogo");
+	const title = document.getElementById("headerTitle");
+	let lastScrollY = window.scrollY;
+
+	function handleScroll() {
+		const currentScrollY = window.scrollY;
+
+		if (currentScrollY > 50) {
+			logo?.classList.add("header__logo--hidden");
+			title?.classList.add("header__title--hidden");
+		} else {
+			logo?.classList.remove("header__logo--hidden");
+			title?.classList.remove("header__title--hidden");
+		}
+
+		lastScrollY = currentScrollY;
+	}
+
+	// Throttle scroll events for performance
+	let ticking = false;
+	window.addEventListener("scroll", () => {
+		if (!ticking) {
+			window.requestAnimationFrame(() => {
+				handleScroll();
+				ticking = false;
+			});
+			ticking = true;
+		}
+	});
+
+	// Initial check
+	handleScroll();
+
+	// Hamburger menu toggle
+	const hamburgerBtn = document.getElementById("hamburgerBtn");
+	const headerNav = document.getElementById("headerNav");
+	const menuLinks = document.querySelectorAll(".header__menu-link");
+
+	hamburgerBtn?.addEventListener("click", () => {
+		hamburgerBtn.classList.toggle("header__hamburger--active");
+		headerNav?.classList.toggle("header__nav--active");
+	});
+
+	// Close menu when a link is clicked
+	menuLinks.forEach((link) => {
+		link.addEventListener("click", () => {
+			hamburgerBtn?.classList.remove("header__hamburger--active");
+			headerNav?.classList.remove("header__nav--active");
+		});
+	});
+</script>

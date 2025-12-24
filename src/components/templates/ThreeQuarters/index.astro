@@ -1,0 +1,70 @@
+---
+import "./styles.scss";
+
+import type { ImageMetadata } from "astro";
+
+interface Props {
+	backgroundImageTopRight?: string | ImageMetadata;
+	backgroundImageBottomLeft?: string | ImageMetadata;
+}
+
+const { backgroundImageTopRight, backgroundImageBottomLeft } = Astro.props;
+
+const bgTopRightUrl =
+	typeof backgroundImageTopRight === "string"
+		? backgroundImageTopRight
+		: backgroundImageTopRight?.src;
+const bgTopRightAspectRatio =
+	typeof backgroundImageTopRight === "object"
+		? `${backgroundImageTopRight.width} / ${backgroundImageTopRight.height}`
+		: "";
+
+const bgBottomLeftUrl =
+	typeof backgroundImageBottomLeft === "string"
+		? backgroundImageBottomLeft
+		: backgroundImageBottomLeft?.src;
+const bgBottomLeftAspectRatio =
+	typeof backgroundImageBottomLeft === "object"
+		? `${backgroundImageBottomLeft.width} / ${backgroundImageBottomLeft.height}`
+		: "";
+---
+
+<div class="three-quarters">
+	<div class="three-quarters__main">
+		<div class="three-quarters__main-top">
+			<slot name="main-top-left" />
+			<div
+				class="three-quarters__background-slot"
+				style={backgroundImageTopRight
+					? `background-image: url(${bgTopRightUrl}); ${bgTopRightAspectRatio ? `aspect-ratio: ${bgTopRightAspectRatio};` : ""}`
+					: ""}
+			>
+				<slot name="main-top-right" />
+			</div>
+		</div>
+		<div class="three-quarters__main-middle">
+			<slot name="main-middle" />
+		</div>
+		<div class="three-quarters__main-bottom">
+			<div
+				class="three-quarters__background-slot"
+				style={backgroundImageBottomLeft
+					? `background-image: url(${bgBottomLeftUrl}); ${bgBottomLeftAspectRatio ? `aspect-ratio: ${bgBottomLeftAspectRatio};` : ""}`
+					: ""}
+			>
+				<slot name="main-bottom-left" />
+			</div>
+			<slot name="main-bottom-right" />
+		</div>
+	</div>
+	<div class="three-quarters__side">
+		<h1 class="three-quarters__side-title">
+			<slot name="side-title" />
+		</h1>
+		<div class="three-quarters__side-sections">
+			<slot name="side-sections" />
+		</div>
+	</div>
+</div>
+
+<slot />
