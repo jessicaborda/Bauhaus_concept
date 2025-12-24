@@ -1,0 +1,15 @@
+---
+import "./styles.scss";
+
+interface Props {
+	backgroundColor?: string;
+	text?: string;
+	color?: string;
+}
+
+const { backgroundColor = "#000000", text = "", color = "white" } = Astro.props;
+---
+
+<div class="color-stripe" style={`background-color: ${backgroundColor};`}>
+	<h2 class="color-stripe__text" style={`color: ${color};`}>{text}</h2>
+</div>

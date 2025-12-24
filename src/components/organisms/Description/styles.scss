@@ -1,0 +1,11 @@
+.description {
+    padding: 40px;
+
+    @media (max-width: 768px) {
+        padding: 24px;
+    }
+
+    &__content+* {
+        margin-top: 2rem;
+    }
+}

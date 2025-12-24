@@ -1,0 +1,40 @@
+.simple-template-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 2rem;
+    width: 100%;
+    padding: 4rem;
+    background-color: var(--color-tertiary);
+    color: var(--color-text-white);
+    border: var(--border-md);
+
+    .simple-template__left {
+        flex: 70%;
+        text-align: left;
+    }
+
+    .simple-template__right {
+        flex: 30%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+    }
+}
+
+@media (max-width: 768px) {
+    .simple-template-container {
+        flex-direction: column;
+        text-align: left;
+        gap: 1.5rem;
+        padding: 1.5rem;
+
+        .simple-template__left,
+        .simple-template__right {
+            flex: 0 0 100%;
+            justify-content: flex-start;
+            align-items: flex-start;
+            text-align: left;
+        }
+    }
+}

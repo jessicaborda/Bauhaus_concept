@@ -1,0 +1,101 @@
+---
+import "./styles.scss";
+import "@ars-design/bauhaus-ui/styles";
+import { Card, VerticalTitleCard, Button } from "@ars-design/bauhaus-ui";
+import type { ImageMetadata } from "astro";
+
+interface Props {
+	backgroundImage?: string | ImageMetadata;
+	section: {
+		title: string;
+		description: string;
+	};
+	cards?: Array<{
+		title: string;
+		description: string;
+	}>;
+}
+
+const {
+	backgroundImage = "/images/default-bg.jpg",
+	section = {
+		title: "Section 1",
+		description: "Description for section 1",
+	},
+	cards = [
+		{ title: "Card 1", description: "Description 1" },
+		{ title: "Card 2", description: "Description 2" },
+		{ title: "Card 3", description: "Description 3" },
+		{ title: "Card 4", description: "Description 4" },
+	],
+} = Astro.props;
+
+const backgroundUrl = typeof backgroundImage === "string" ? backgroundImage : backgroundImage?.src;
+const aspectRatio =
+	typeof backgroundImage === "object"
+		? `${backgroundImage.width} / ${backgroundImage.height}`
+		: "";
+---
+
+<div class="four-quarters">
+	<div class="four-quarters__content-section">
+		<h2 class="four-quarters__title">{section.title}</h2>
+		<p class="four-quarters__description">{section.description}</p>
+		<div class="four-quarters__cards">
+			<div class="four-quarters__cards__top">
+				<div class="four-quarters__card-wrapper four-quarters__card-wrapper--small">
+					<Card minWidth="200px" buttonVariant="none" client:load title={cards[0]?.title}>
+						<div class="card_description">
+							<p>{cards[0]?.description}</p>
+						</div>
+					</Card>
+				</div>
+				<div class="four-quarters__card-wrapper four-quarters__card-wrapper--large">
+					<VerticalTitleCard
+						minWidth="200px"
+						buttonVariant="none"
+						client:load
+						title={cards[1]?.title}
+					>
+						<div class="card_description">
+							<p>{cards[1]?.description}</p>
+						</div>
+					</VerticalTitleCard>
+				</div>
+			</div>
+			<div class="four-quarters__cards__bottom">
+				<div class="four-quarters__card-wrapper four-quarters__card-wrapper--large">
+					<VerticalTitleCard
+						minWidth="200px"
+						buttonVariant="none"
+						client:load
+						title={cards[2]?.title}
+					>
+						<div class="card_description">
+							<p>{cards[2]?.description}</p>
+						</div>
+					</VerticalTitleCard>
+				</div>
+				<div class="four-quarters__card-wrapper four-quarters__card-wrapper--small">
+					<Card
+						minWidth="200px"
+						buttonText="Soy un botón"
+						client:load
+						title={cards[3]?.title}
+					>
+						<div class="card_description">
+							<p>{cards[3]?.description}</p>
+						</div>
+					</Card>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div
+		class="four-quarters__image-section"
+		style={backgroundImage
+			? `background-image: url(${backgroundUrl}); ${aspectRatio ? `aspect-ratio: ${aspectRatio};` : ""}`
+			: ""}
+	>
+	</div>
+</div>

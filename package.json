@@ -1,0 +1,36 @@
+{
+	"name": "bauhaus-ui-landing",
+	"type": "module",
+	"version": "1.0.0",
+	"description": "Landing page for Bauhaus UI component library",
+	"author": "Jessica Borda",
+	"license": "MIT",
+	"engines": {
+		"node": ">=20.0.0"
+	},
+	"scripts": {
+		"dev": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"astro": "astro",
+		"lint": "biome check .",
+		"lint:fix": "biome check --write .",
+		"format": "biome format --write . && prettier --write \"**/*.astro\"",
+		"format:astro": "prettier --write \"**/*.astro\""
+	},
+	"dependencies": {
+		"@ars-design/bauhaus-ui": "^0.2.1",
+		"@astrojs/react": "^4.4.2",
+		"@types/react": "^19.2.7",
+		"@types/react-dom": "^19.2.3",
+		"astro": "^5.16.6",
+		"react": "^19.2.3",
+		"react-dom": "^19.2.3"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^2.3.10",
+		"prettier": "^3.7.4",
+		"prettier-plugin-astro": "^0.14.1",
+		"sass": "^1.97.1"
+	}
+}
